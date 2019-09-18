@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Digital Clock</title>
+
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: monospace;
+        font-size: 3em;
+        font-weight: bold;
+        background-color: lightslategray;
+        color: white;
+      }
+      #clock {
+        border: 2px solid white;
+        padding: 0.5em 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock"></div>
+
+    <script>
+      const showTime = () => {
+        // CLOCK ELEMENTS
+        let date = new Date();
+        let h = date.getHours();
+        let m = date.getMinutes();
+        let s = date.getSeconds();
+
+        // DOM ELEMENTS
+        document.querySelector("#clock").innerHTML = `
+            <span>${h} :</span>
+            <span>${m} :</span>
+            <span>${s}</span>
+        `;
+      };
+
+      setInterval(() => showTime(), 1000);
+    </script>
+  </body>
+</html>
